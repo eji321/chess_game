@@ -62,35 +62,22 @@ def is_piece_available(piece):
         print("This piece has been captured!")
         return False
 
-def pawn_movement(piece, fposition):
-    piece_row, piece_col = find_piece(piece)
-    final_row, final_col = find_square(fposition)
-    if piece == 'P':
-        if final_col == piece_col and (final_row + 1) == piece_row:
-            #create a function that updates the game board with the new position of the pawn
-            return True
-        else:
-            print("This move is not possible")
-            return False
-    else:
-        if final_col == piece_col and (final_row - 1) == piece_row:
-            #create a function that updates the game board with the new position of the pawn
-            return True
-        else:
-            print("This move is not possible")
-            return False
 
 
-def pawn_capture(piece, fposition):
-    piece_row, piece_col = find_piece(piece)
-    final_row, final_col = find_square(fposition)
-    if (final_col + 1 == piece_col or final_col - 1 == piece_col) and final_row - 1 == piece_row:
-        #create a function that takes the piece at the index of the capture and replaces it with this pawn
-        return True
-    else:
-        print("This move is not possible")
-        return False
 
+
+
+
+class piece:
+    def __init__(self,name,color,position):
+        self.name = name
+        self.color = color
+        self.position = position
+
+    def valid_moves(self):
+        #returns a list of all possible moves for the piece
+
+class pawn(piece):
 
 
 
